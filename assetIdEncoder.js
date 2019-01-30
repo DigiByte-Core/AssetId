@@ -12,7 +12,7 @@ var LOCKEPADDING = {
   hybrid: 0x2102,
   dispersed: 0x20e4
 }
-var BTC_P2PKH = 0x00
+var BTC_P2PKH = 0x1e
 var BTC_TESTNET_P2PKH = 0x6f
 var BTC_P2SH = 0x05
 var BTC_TESTNET_P2SH = 0xc4
@@ -107,7 +107,7 @@ var hashAndBase58CheckEncode = function (payloadToHash, padding, divisibility) {
 }
 
 module.exports = function (bitcoinTransaction) {
-  debug('bitcoinTransaction.txid = ', bitcoinTransaction.txid)
+  debug('digibyteTransaction.txid = ', bitcoinTransaction.txid)
   if (!bitcoinTransaction.ccdata) throw new Error('Missing Colored Coin Metadata')
   if (bitcoinTransaction.ccdata[0].type !== 'issuance') throw new Error('Not An issuance transaction')
   if (typeof bitcoinTransaction.ccdata[0].lockStatus === 'undefined') throw new Error('Missing Lock Status data')

@@ -1,5 +1,5 @@
 {
-  "name": "cc-assetid-encoder",
+  "name": "digiasset-assetid-encoder",
   "version": "0.6.2",
   "description": "Creates an Asset Id for Issuance transaction",
   "main": "assetIdEncoder.js",
@@ -14,16 +14,16 @@
   "author": "thehobbit85",
   "license": "Apache-2.0",
   "keywords": [
-    "colored coins",
-    "bitcoin",
+    "digiassets",
+    "digibyte",
     "blockchain"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Colored-Coins/AssetId.git"
+    "url": "https://github.com/DigiByte-Core/AssetId.git"
   },
   "dependencies": {
-    "bitcoinjs-lib": "2.2.0",
+    "bitcoinjs-lib": "git://github.com/DigiByte-Core/bitcoinjs-lib.git#2d5fb18fbb4e785bee6cef1b28906987ea5cb505",
     "bs58check": "1.0.8",
     "crypto-hashing": "0.3.1",
     "debug": "2.2.0"
