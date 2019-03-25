@@ -106,15 +106,15 @@ var hashAndBase58CheckEncode = function (payloadToHash, padding, divisibility) {
   return bs58check.encode(concatenation)
 }
 
-module.exports = function (bitcoinTransaction) {
-  debug('digibyteTransaction.txid = ', bitcoinTransaction.txid)
-  if (!bitcoinTransaction.ccdata) throw new Error('Missing Colored Coin Metadata')
-  if (bitcoinTransaction.ccdata[0].type !== 'issuance') throw new Error('Not An issuance transaction')
-  if (typeof bitcoinTransaction.ccdata[0].lockStatus === 'undefined') throw new Error('Missing Lock Status data')
-  var lockStatus = bitcoinTransaction.ccdata[0].lockStatus
-  var aggregationPolicy = bitcoinTransaction.ccdata[0].aggregationPolicy || 'aggregatable'
-  var divisibility = bitcoinTransaction.ccdata[0].divisibility || 0
-  var firstInput = bitcoinTransaction.vin[0]
+module.exports = function (digibyteTransaction) {
+  debug('digibyteTransaction.txid = ', digibyteTransaction.txid)
+  if (!digibyteTransaction.dadata) throw new Error('Missing DigiAsset Metadata')
+  if (digibyteTransaction.dadata[0].type !== 'issuance') throw new Error('Not An issuance transaction')
+  if (typeof digibyteTransaction.dadata[0].lockStatus === 'undefined') throw new Error('Missing Lock Status data')
+  var lockStatus = digibyteTransaction.dadata[0].lockStatus
+  var aggregationPolicy = digibyteTransaction.dadata[0].aggregationPolicy || 'aggregatable'
+  var divisibility = digibyteTransaction.dadata[0].divisibility || 0
+  var firstInput = digibyteTransaction.vin[0]
   var padding
   if (lockStatus) {
     padding = LOCKEPADDING[aggregationPolicy]
