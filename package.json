@@ -1,6 +1,6 @@
 {
   "name": "digiasset-assetid-encoder",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Creates an Asset Id for Issuance transaction",
   "main": "assetIdEncoder.js",
   "directories": {
@@ -23,7 +23,7 @@
     "url": "https://github.com/DigiByte-Core/AssetId.git"
   },
   "dependencies": {
-    "bitcoinjs-lib": "git://github.com/DigiByte-Core/bitcoinjs-lib.git#2d5fb18fbb4e785bee6cef1b28906987ea5cb505",
+    "bitcoinjs-lib": "2.2.0",
     "bs58check": "1.0.8",
     "crypto-hashing": "0.3.1",
     "debug": "2.2.0"
