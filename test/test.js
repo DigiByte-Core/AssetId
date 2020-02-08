@@ -233,13 +233,13 @@ describe('create unlocked assetID from address', function () {
       lockStatus: false
     }],
     vin: [{
-      address: 'mxNTyQ3WdFMQE7SGVpSQGXnSDevGMLq7dg'
+      address: 'DJysG38LMYPpyD9cHYBuD1x1gUQpmbfNWZ'
     }]
   }
 
   it('should return correct unlocked asset ID', function (done) {
     assetId = assetIdEncoder(digibyteTransaction)
-    assert.equal(assetId, 'Ua3Kt8WJtsx61VC8DUJiRmseQ45NfW2eJXbbE8')
+    assert.equal(assetId, 'Ua7aoEMJRW6VK9sBfssGq3ChUox3NdNpQXoXjS')
     console.log(assetId)
     done()
   })
@@ -247,7 +247,7 @@ describe('create unlocked assetID from address', function () {
   it('should return correct unlocked aggregatable asset ID', function (done) {
     digibyteTransaction.dadata[0].aggregationPolicy = 'aggregatable'
     assetId = assetIdEncoder(digibyteTransaction)
-    assert.equal(assetId, 'Ua3Kt8WJtsx61VC8DUJiRmseQ45NfW2eJXbbE8')
+    assert.equal(assetId, 'Ua7aoEMJRW6VK9sBfssGq3ChUox3NdNpQXoXjS')
     console.log(assetId)
     done()
   })
@@ -255,7 +255,7 @@ describe('create unlocked assetID from address', function () {
   it('should return correct unlocked hybrid asset ID', function (done) {
     digibyteTransaction.dadata[0].aggregationPolicy = 'hybrid'
     assetId = assetIdEncoder(digibyteTransaction)
-    assert.equal(assetId, 'Uh4xEVFkgvvApJWrwucqGMjH1YkWmgGwizurnM')
+    assert.equal(assetId, 'Uh9D9b6kDZ4a7yBvQKBPfd4L6JdBUod7uN8i2L')
     console.log(assetId)
     done()
   })
@@ -263,7 +263,7 @@ describe('create unlocked assetID from address', function () {
   it('should return correct unlocked dispersed asset ID', function (done) {
     digibyteTransaction.dadata[0].aggregationPolicy = 'dispersed'
     assetId = assetIdEncoder(digibyteTransaction)
-    assert.equal(assetId, 'Ud9d5N9NVkLfNCCc3ExquxPQUbimDEV3ctXUKS')
+    assert.equal(assetId, 'UdDszTzN2NV4frsfVeXQKDiTZMbRvMqDnAfjgo')
     console.log(assetId)
     done()
   })
@@ -313,6 +313,52 @@ describe('create unlocked assetID from pay-to-scripthash address', function () {
     done()
   })
 })
+
+describe('create unlocked assetID from pay-to-witness address', function () {
+  var assetId
+  var digibyteTransaction = {
+    dadata: [{
+      type: 'issuance',
+      divisibility: 3,
+      lockStatus: false
+    }],
+    vin: [{
+      address: 'dgb1qjlfwa9lz3swdk8ym0l4a7lqzsp3wn8ldru8jyf'
+    }]
+  }
+
+  it('should return correct unlocked asset ID', function (done) {
+    assetId = assetIdEncoder(digibyteTransaction)
+    assert.equal(assetId, 'Ua7aoEMJRW6VK9sBfssGq3ChUox3NdNpQXoXjS')
+    console.log(assetId)
+    done()
+  })
+
+  it('should return correct unlocked aggregatable asset ID', function (done) {
+    digibyteTransaction.dadata[0].aggregationPolicy = 'aggregatable'
+    assetId = assetIdEncoder(digibyteTransaction)
+    assert.equal(assetId, 'Ua7aoEMJRW6VK9sBfssGq3ChUox3NdNpQXoXjS')
+    console.log(assetId)
+    done()
+  })
+
+  it('should return correct unlocked hybrid asset ID', function (done) {
+    digibyteTransaction.dadata[0].aggregationPolicy = 'hybrid'
+    assetId = assetIdEncoder(digibyteTransaction)
+    assert.equal(assetId, 'Uh9D9b6kDZ4a7yBvQKBPfd4L6JdBUod7uN8i2L')
+    console.log(assetId)
+    done()
+  })
+
+  it('should return correct unlocked dispersed asset ID', function (done) {
+    digibyteTransaction.dadata[0].aggregationPolicy = 'dispersed'
+    assetId = assetIdEncoder(digibyteTransaction)
+    assert.equal(assetId, 'UdDszTzN2NV4frsfVeXQKDiTZMbRvMqDnAfjgo')
+    console.log(assetId)
+    done()
+  })
+})
+
 
 describe('create assetID from scriptSig.hex', function () {
   var assetId

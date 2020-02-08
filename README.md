@@ -3,12 +3,12 @@
 
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
-Issuance-Encoder provides the encode/decode functions between a Colored Coins issuance Object to buffer
+Issuance-Encoder provides the encode/decode functions between a DigiAsset issuance Object to buffer
 
 ### Installation
 
 ```sh
-$ npm install cc-assetid-encoder
+$ npm install digiasset-assetid-encoder
 ```
 
 
@@ -19,7 +19,7 @@ Params:
 
 ```js
 {
-  'ccdata': [{
+  'dadata': [{
     'type': 'issuance',
     'lockStatus': false,
   }],
@@ -44,10 +44,10 @@ Returns a new Buffer holding the encoded issuance.
 ##### Example:
 
 ```js
-var assetIdEncoder = require('cc-assetid-encoder')
+var assetIdEncoder = require('digiasset-assetid-encoder')
 
 var bitcoinTransaction = {
-  'ccdata': [{
+  'dadata': [{
     'type': 'issuance',
     'lockStatus': false,
   }],
@@ -71,7 +71,7 @@ assetIdEncoder(bitcoinTransaction)
 In order to test you need to install [mocha] globaly on your machine
 
 ```sh
-$ cd /"module-path"/cc-assetid-Encoder
+$ cd /"module-path"/digiasset-assetid-Encoder
 $ mocha
 ```
 
